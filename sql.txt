@@ -1,0 +1,49 @@
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `password` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `book_info` (
+  `book_id` bigint(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `author` varchar(50) NOT NULL,
+  `publish` varchar(30) NOT NULL,
+  `ISBN` varchar(13) NOT NULL,
+  `introduction` text,
+  `language` varchar(10) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `pubdate` date DEFAULT NULL,
+  `class_id` int(11) DEFAULT NULL,
+  `pressmark` int(11) DEFAULT NULL,
+  `state` smallint(6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `class_info` (
+  `class_id` int(11) NOT NULL,
+  `class_name` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `lend_list` (
+  `sernum` bigint(20) NOT NULL,
+  `book_id` bigint(20) NOT NULL,
+  `reader_id` int(11) NOT NULL,
+  `lend_date` date DEFAULT NULL,
+  `back_date` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `lend_list` (
+  `sernum` bigint(20) NOT NULL,
+  `book_id` bigint(20) NOT NULL,
+  `reader_id` int(11) NOT NULL,
+  `lend_date` date DEFAULT NULL,
+  `back_date` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `reader_info` (
+  `reader_id` int(11) NOT NULL,
+  `name` varchar(16) NOT NULL,
+  `sex` varchar(2) DEFAULT NULL,
+  `birth` date DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `telcode` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
